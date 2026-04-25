@@ -1,6 +1,6 @@
 {
-   "name": "@itsliaaa/baileys",
-   "version": "0.1.33",
+   "name": "@sky0xf/baileys",
+   "version": "1.2.01",
    "description": "Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.",
    "main": "lib/index.js",
    "type": "module",
@@ -12,7 +12,7 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/itsliaaa/baileys.git"
+      "url": "git+https://github.com/skyzopedia/baileys.git"
    },
    "files": [
       "lib/**/*",
@@ -34,8 +34,8 @@
       "whatsapp-group",
       "whatsapp-web"
    ],
-   "homepage": "https://github.com/itsliaaa/baileys#readme",
-   "author": "Lia Wynn",
+   "homepage": "https://github.com/skyzopedia/baileys#readme",
+   "author": "Skyy",
    "license": "MIT",
    "dependencies": {
       "@adiwajshing/keyed-db": "^0.2.4",
