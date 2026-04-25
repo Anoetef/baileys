@@ -11,7 +11,7 @@
    <a href="https://www.npmjs.com/package/@skycodee/baileys">
       <img src="https://img.shields.io/npm/dm/@skycodee/baileys?style=for-the-badge&logo=npm"/>
    </a>
-   <a href="https://github.com/Skyzopedia/baileys">
+   <a href="https://github.com/skyzopedia/baileys">
       <img src="https://img.shields.io/github/stars/itsliaaa/baileys?style=for-the-badge&logo=github"/>
    </a>
    <a href="LICENSE">
@@ -168,7 +168,7 @@ Hi everyone,
 
 # GitHub
 "dependencies": {
-   "@skycodee/baileys": "github:Skyzopedia/baileys"
+   "@skycodee/baileys": "github:skyzopedia/baileys"
 }
 ```
 
@@ -179,7 +179,7 @@ Hi everyone,
 npm i @skycodee/baileys@latest
 
 # GitHub
-npm i github:Skyzopedia/baileys
+npm i github:skyzopedia/baileys
 ```
 
 #### 🧩 Import (ESM & CJS)
@@ -1737,6 +1737,6 @@ This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://g
 > - [jlucaso1](https://github.com/jlucaso1)
 > - [adiwajshing](https://github.com/adiwajshing)
 >
-> This fork includes additional enhancements and modifications by [Skyy](https://github.com/Skyzopedia)
+> This fork includes additional enhancements and modifications by [Skyy](https://github.com/skyzopedia)
 >
 > **Credits are mandatory and must remain unchanged in any form of redistribution or fork.**
