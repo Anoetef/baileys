@@ -1,4 +1,4 @@
-# 🌱 @skycodee/baileys
+#🌱 @skycodee/baileys
 
 [![Logo](https://files.catbox.moe/c5s9g0.jpg)](https://www.npmjs.com/package/@skycodee/baileys)
 
