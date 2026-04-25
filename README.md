@@ -1,4 +1,4 @@
-🌱 @skycodee/baileys
+# 🌱 @skycodee/baileys
 
 [![Logo](https://files.catbox.moe/c5s9g0.jpg)](https://www.npmjs.com/package/@skycodee/baileys)
 
@@ -26,7 +26,7 @@
 </p>
 
 
-#✨ Highlights
+### ✨ Highlights
 
 This fork designed for production use with a focus on clarity and safety:
 
@@ -60,13 +60,13 @@ Hi everyone,
 >
 > 😞 And, really sorry for my bad english.
 
-#🛠️ Internal Adjustments
+### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-a-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
 
-#📨 Messages Handling & Compatibility
+### 📨 Messages Handling & Compatibility
 - 📩 Expanded messages support for:
    - 🖼️ [Album Message](#%EF%B8%8F-album-image--video)
    - 👤 [Group Status Message](#4%EF%B8%8F⃣-group-status)
@@ -81,7 +81,7 @@ Hi everyone,
 - 💭 Added support for quoting messages inside channel (newsletter). **[NEW]**
 - 🎀 Added support for [custom button icon](#3%EF%B8%8F⃣-interactive). **[NEW]**
 
-🧩 Additional Message Options
+### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - 🤖 [`ai`](#1%EF%B8%8F⃣-ai-icon) - AI icon on message
    - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid` **[NEW]**
@@ -89,7 +89,7 @@ Hi everyone,
    - 🔒 [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message **[NEW]**
    - 📄 [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
-📋 Index
+### 📋 Index
 - [📥 Installation](#-installation)
    - [🧩 Import (ESM & CJS)](#-import-esm--cjs)
 - [🌐 Connect to WhatsApp (Quick Step)](#-connect-to-whatsapp-quick-step)
@@ -156,7 +156,7 @@ Hi everyone,
 - [📦 Fork Base](#-fork-base)
 - [📣 Credits](#-credits)
 
-📥 Installation
+### 📥 Installation
 
 - 📄 Via `package.json`
 
@@ -182,7 +182,7 @@ npm i @skycodee/baileys@latest
 npm i github:Skyzopedia/baileys
 ```
 
-🧩 Import (ESM & CJS)
+#### 🧩 Import (ESM & CJS)
 
 ```javascript
 // --- ESM
@@ -192,7 +192,7 @@ import { makeWASocket } from '@skycodee/baileys'
 const { makeWASocket } = require('@skycodee/baileys')
 ```
 
-🌐 Connect to WhatsApp (Quick Step)
+### 🌐 Connect to WhatsApp (Quick Step)
 
 ```javascript
 import { makeWASocket, delay, DisconnectReason, useMultiFileAuthState } from '@skycodee/baileys'
@@ -248,7 +248,7 @@ const connectToWhatsApp = async () => {
 connectToWhatsApp()
 ```
 
-🗄️ Implementing Data Store
+### 🗄️ Implementing Data Store
 
 > [!CAUTION]
 I highly recommend building your own data store, as keeping an entire chat history in memory can lead to excessive RAM usage.
@@ -321,7 +321,7 @@ const connectToWhatsApp = async () => {
 connectToWhatsApp()
 ```
 
-🪪 WhatsApp IDs Explain
+### 🪪 WhatsApp IDs Explain
 
 `id` is the WhatsApp ID, called `jid` and `lid` too, of the person or group you're sending the message to.
 - It must be in the format `[country code][phone number]@s.whatsapp.net`
@@ -331,12 +331,12 @@ connectToWhatsApp()
 - For broadcast lists, it's `[timestamp of creation]@broadcast`.
 - For stories, the ID is `status@broadcast`.
 
-✉️ Sending Messages
+### ✉️ Sending Messages
 
 > [!NOTE]
 You can get the `jid` from `message.key.remoteJid` in the first example.
 
-🔠 Text
+#### 🔠 Text
 
 ```javascript
 sock.sendMessage(jid, {
@@ -346,7 +346,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🔔 Mention
+#### 🔔 Mention
 
 ```javascript
 // --- Regular mention
@@ -366,7 +366,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-😁 Reaction
+#### 😁 Reaction
 
 ```javascript
 sock.sendMessage(jid, {
@@ -379,7 +379,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-📌 Pin Message
+#### 📌 Pin Message
 
 ```javascript
 sock.sendMessage(jid, {
@@ -391,7 +391,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-➡️ Forward Message
+#### ➡️ Forward Message
 
 ```javascript
 sock.sendMessage(jid, {
@@ -400,7 +400,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-👤 Contact
+#### 👤 Contact
 
 ```javascript
 const vcard = 'BEGIN:VCARD\n'
@@ -422,7 +422,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-📍 Location
+#### 📍 Location
 
 ```javascript
 sock.sendMessage(jid, {
@@ -436,7 +436,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🗓️ Event
+#### 🗓️ Event
 
 ```javascript
 sock.sendMessage(jid, {
@@ -460,7 +460,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-👥 Group Invite
+#### 👥 Group Invite
 
 ```javascript
 const inviteCode = groupUrl
@@ -483,7 +483,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🛍️ Product
+#### 🛍️ Product
 
 ```javascript
 import { randomUUID } from 'crypto'
@@ -509,7 +509,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-📊 Poll
+#### 📊 Poll
 
 ```javascript
 // --- Regular poll message
@@ -568,7 +568,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-💭 Button Response
+#### 💭 Button Response
 
 ```javascript
 // --- Using buttonsResponseMessage
@@ -621,7 +621,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-✨ Rich Response
+#### ✨ Rich Response
 
 > [!NOTE]
 `richResponse[]` is a representation of [`submessages[]`](https://baileys.wiki/docs/api/namespaces/proto/interfaces/IAIRichResponseSubMessage) inside `richResponseMessage`.
@@ -683,14 +683,14 @@ sock.sendMessage(jid, {
 })
 ```
 
-🧾 Message with Code Block
+#### 🧾 Message with Code Block
 
 > [!NOTE]
 This feature already includes a built-in tokenizer.
 
 ```javascript
 sock.sendMessage(jid, {
-   headerText: 'Example Usage',
+   headerText: '## Example Usage',
    contentText: '---',
    code: 'console.log("Hello, World!")',
    language: 'javascript',
@@ -698,11 +698,11 @@ sock.sendMessage(jid, {
 })
 ```
 
-🌏 Message with Inline Entities
+#### 🌏 Message with Inline Entities
 
 ```javascript
 sock.sendMessage(jid, {
-   headerText: 'Check Out!',
+   headerText: '## Check Out!',
    contentText: '---',
    links: [{
       text: '1. Google',
@@ -721,11 +721,11 @@ sock.sendMessage(jid, {
 })
 ```
 
-📋 Message with Table
+#### 📋 Message with Table
 
 ```javascript
 sock.sendMessage(jid, {
-   headerText: 'Comparison between Node.js, Bun, and Deno',
+   headerText: '## Comparison between Node.js, Bun, and Deno',
    contentText: '---',
    title: 'Runtime Comparison',
    table: [
@@ -738,7 +738,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🎞️ Status Mention
+#### 🎞️ Status Mention
 
 ```javascript
 sock.sendMessage([jidA, jidB, jidC], {
@@ -746,12 +746,12 @@ sock.sendMessage([jidA, jidB, jidC], {
 })
 ```
 
-📁 Sending Media Messages
+### 📁 Sending Media Messages
 
 > [!NOTE]
 For media messages, you can pass a `Buffer` directly, or an object with either `{ stream: Readable }` or `{ url: string }` (local file path or HTTP/HTTPS URL).
 
-🖼️ Image
+#### 🖼️ Image
 
 ```javascript
 sock.sendMessage(jid, {
@@ -764,7 +764,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🎥 Video
+#### 🎥 Video
 
 ```javascript
 sock.sendMessage(jid, {
@@ -779,7 +779,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-📃 Sticker
+#### 📃 Sticker
 
 ```javascript
 sock.sendMessage(jid, {
@@ -791,7 +791,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-💽 Audio
+#### 💽 Audio
 
 ```javascript
 sock.sendMessage(jid, {
@@ -804,7 +804,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🗂️ Document
+#### 🗂️ Document
 
 ```javascript
 sock.sendMessage(jid, {
@@ -818,7 +818,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-🖼️ Album (Image & Video)
+#### 🖼️ Album (Image & Video)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -848,7 +848,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-📦 Sticker Pack
+#### 📦 Sticker Pack
 
 > [!IMPORTANT]
 If `sharp` or `@napi-rs/image` is not installed, the `cover` and `stickers` must already be in WebP format.
@@ -879,9 +879,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-👉🏻 Sending Interactive Messages
+### 👉🏻 Sending Interactive Messages
 
-1️⃣ Buttons
+#### 1️⃣ Buttons
 
 ```javascript
 // --- Regular buttons message
@@ -932,7 +932,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-2️⃣ List
+#### 2️⃣ List
 
 > [!NOTE]
 It only works in private chat (`@s.whatsapp.net`).
@@ -963,7 +963,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-3️⃣ Interactive
+#### 3️⃣ Interactive
 
 ```javascript
 // --- Native Flow
@@ -1075,7 +1075,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-4️⃣ Hydrated Template
+#### 4️⃣ Hydrated Template
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1100,9 +1100,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-💳 Sending Payment Messages
+### 💳 Sending Payment Messages
 
-1️⃣ Invite Payment
+#### 1️⃣ Invite Payment
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1110,7 +1110,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-2️⃣ Invoice
+#### 2️⃣ Invoice
 
 > [!NOTE]
 Invoice message are not supported yet.
@@ -1124,7 +1124,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-3️⃣ Order
+#### 3️⃣ Order
 
 ```javascript
 sock.sendMessage(chat, {
@@ -1135,7 +1135,7 @@ sock.sendMessage(chat, {
 })
 ```
 
-4️⃣ Request Payment
+#### 4️⃣ Request Payment
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1144,9 +1144,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-👁️ Other Message Options
+### 👁️ Other Message Options
 
-1️⃣ AI Icon
+#### 1️⃣ AI Icon
 
 > [!NOTE]
 It only works in private chat (`@s.whatsapp.net`).
@@ -1163,7 +1163,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-2️⃣ Ephemeral
+#### 2️⃣ Ephemeral
 
 > [!NOTE]
 Wrap message into `ephemeralMessage`
@@ -1178,7 +1178,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-3️⃣ External Ad Reply
+#### 3️⃣ External Ad Reply
 
 > [!NOTE]
 Add an ad thumbnail to messages (may not be displayed on some WhatsApp versions).
@@ -1198,7 +1198,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-4️⃣ Group Status
+#### 4️⃣ Group Status
 
 > [!NOTE]
 It only works in group chat (`@g.us`)
@@ -1213,7 +1213,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-5️⃣ Raw
+#### 5️⃣ Raw
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1235,7 +1235,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-6️⃣ Secure Meta Service Label
+#### 6️⃣ Secure Meta Service Label
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1244,7 +1244,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-7️⃣ View Once
+#### 7️⃣ View Once
 
 > [!NOTE]
 Wrap message into `viewOnceMessage`
@@ -1259,7 +1259,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-8️⃣ View Once V2
+#### 8️⃣ View Once V2
 
 > [!NOTE]
 Wrap message into `viewOnceMessageV2`
@@ -1274,7 +1274,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-9️⃣ View Once V2 Extension
+#### 9️⃣ View Once V2 Extension
 
 > [!NOTE]
 Wrap message into `viewOnceMessageV2Extension`
@@ -1289,9 +1289,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-#♻️ Modify Messages
+### ♻️ Modify Messages
 
-🗑️ Delete Messages
+#### 🗑️ Delete Messages
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1299,7 +1299,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-✏️ Edit Messages
+#### ✏️ Edit Messages
 
 ```javascript
 // --- Edit plain text
@@ -1315,9 +1315,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-#🧰 Additional Contents
+### 🧰 Additional Contents
 
-🏷️ Find User ID (JID|PN/LID)
+#### 🏷️ Find User ID (JID|PN/LID)
 
 > [!NOTE]
 The ID must contain numbers only (no +, (), or -) and must include the country code with WhatsApp ID format.
@@ -1350,7 +1350,7 @@ console.log('🏷️ Got user ID', ':', ids)
 // --- Same output shape regardless of input type
 ```
 
-🔑 Request Custom Pairing Code
+#### 🔑 Request Custom Pairing Code
 
 > [!NOTE]
 The phone number must contain numbers only (no +, (), or -) and must include the country code.
@@ -1364,7 +1364,7 @@ await sock.requestPairingCode(phoneNumber, customPairingCode)
 console.log('🔗 Pairing code', ':', customPairingCode)
 ```
 
-🖼️ Image Processing
+#### 🖼️ Image Processing
 
 > [!NOTE]
 Automatically use available image processing library: `sharp`, `@napi-rs/image`, or `jimp`
@@ -1420,7 +1420,7 @@ console.log('✅ Process completed!')
 console.dir(output, { depth: null })
 ```
 
-📣 Newsletter Management
+#### 📣 Newsletter Management
 
 ```javascript
 // --- Create a new one
@@ -1483,7 +1483,7 @@ console.dir(messages, { depth: null })
 sock.newsletterDelete('1231111111111@newsletter')
 ```
 
-👥 Group Management
+#### 👥 Group Management
 
 ```javascript
 // --- Create a new one and add participants using their JIDs
@@ -1579,7 +1579,7 @@ console.log('👥 Got group info from link', ':', group)
 sock.updateMemberLabel(jid, '@skycodee/baileys')
 ```
 
-👤 Profile Management
+#### 👤 Profile Management
 
 ```javascript
 // --- Get user profile picture
@@ -1644,7 +1644,7 @@ const profile = await sock.getBusinessProfile(jid)
 console.dir(profile, { depth: null })
 ```
 
-🔐 Privacy Management
+#### 🔐 Privacy Management
 
 ```javascript
 // --- Update last seen privacy
@@ -1686,7 +1686,7 @@ sock.updateDefaultDisappearingMode(86400)
 sock.updateDisableLinkPreviewsPrivacy(true)
 ```
 
-📡 Events
+#### 📡 Events
 
 ```javascript
 sock.ev.on('connection.update', (update) => {})
@@ -1724,11 +1724,11 @@ sock.ev.on('newsletter-settings.update', (update) => {})
 sock.ev.on('settings.update', (update) => {})
 ```
 
-📦 Fork Base
+## 📦 Fork Base
 > [!NOTE]
 This fork is based on [Baileys (GitHub)](https://github.com/WhiskeySockets/Baileys)
 
-📣 Credits
+## 📣 Credits
 > [!IMPORTANT]
 This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://github.com/wppconnect-team) via [`wa-proto`](https://github.com/wppconnect-team/wa-proto)
 > 
